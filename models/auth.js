@@ -1,21 +1,21 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const auth = sequelize.define('auth', {
+  const Auth = sequelize.define('Auth', {
     email: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    createdAt: {
+      field: 'createdAt',
+      type: DataTypes.DATE,
+  },
+  updatedAt: {
+      field: 'updatedAt',
+      type: DataTypes.DATE,
+  }
   }, {
-    freezeTableName: true,
-    instanceMethods: {
-      generateHash(password) {
-        return bcrypt.hash(password, bcrypt.genSaltSync(8));
-      },
-      validPassword(password) {
-        return bcrypt.compare(password, this.password);
-      }
-    }
+    tableName: 'auth'
   });
-  auth.associate = function(models) {
+  Auth.associate = function(models) {
     // associations can be defined here
   };
-  return auth;
+  return Auth;
 };
