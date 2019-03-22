@@ -25,11 +25,11 @@ const models = require("./models");
 
 models.sequelize.sync().then(() => {
   console.log("Database is connect");
-  require('./routes')(app);
 
 }).catch(() => {
   console.log("Something went wrong with the DATABASE");
 })
+require('./routes')(app);
 
 
 const port = parseInt(process.env.PORT, 10) || 8080;

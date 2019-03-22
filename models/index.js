@@ -6,6 +6,15 @@ const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
+// const config = {
+//   username: process.env.SQL_USER,
+//   password: process.env.SQL_PASSWORD,
+//   database: process.env.SQL_DATABASE,
+//   port: process.env.DB_PORT,
+//   socket: process.env.DB_SOCKET,
+//   host: process.env.INSTANCE_CONNECTION_NAME,
+//   dialect: "mysql"
+// }
 const db = {};
 
 let sequelize;

@@ -4,20 +4,24 @@
     "password": "1234",
     "database": "neat",
     "host": "35.202.144.20",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": "3306"
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "password": "1234",
+    "database": "neat",
+    "host": "35.202.144.20",
+    "dialect": "mysql",
+    "port": "3306"
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "password": "1234",
+    "database": "neat",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "socketPath": "/cloudsql/neatwebplatform:us-central1:neatdb"
+    }
   }
 }
