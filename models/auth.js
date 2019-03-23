@@ -6,15 +6,16 @@ module.exports = (sequelize, DataTypes) => {
     createdAt: {
       field: 'createdAt',
       type: DataTypes.DATE,
-  },
-  updatedAt: {
-      field: 'updatedAt',
-      type: DataTypes.DATE,
-  }
-  }, {
-    tableName: 'auth'
-  });
-  Auth.associate = function(models) {
+    },
+    updatedAt: {
+        field: 'updatedAt',
+        type: DataTypes.DATE,
+    }
+    }, {
+      tableName: 'auth'
+    });
+  
+    Auth.associate = function(models) {
     // associations can be defined here
   };
   return Auth;
