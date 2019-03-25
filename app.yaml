@@ -1,5 +1,11 @@
 runtime: nodejs
 env: flex
 
+handlers:
+  - url: /
+    static_dir: /
+    http_headers:
+      Access-Control-Allow-Origin: '*'
+
 beta_settings:
   cloud_sql_instances: "neatwebplatform:us-central1:neatdb"
