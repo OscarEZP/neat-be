@@ -2,6 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+// const {BigQuery} = require('@google-cloud/bigquery');
 
 // This will be our application entry. We'll setup our server here.
 const http = require('http');
@@ -9,11 +10,6 @@ const http = require('http');
 // Set up the express app
 
 const app = express();
-
-// Log requests to the console.
-// app.use(cors);
-// app.use(cors);
-// app.options('*', cors());
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -29,19 +25,18 @@ app.use((req, res, next) => {
   next();
  });
 
-  app.use(cors({
-    origin:'http://localhost:4200'
-  }));
-
 app.use(logger('dev'));
-
-// Parse incoming requests data (https://github.com/expressjs/body-parser)
 
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Setup a default catch-all route that sends back a welcome message in JSON format.
+// const bigquery = new BigQuery({
+//   projectId: 'neatwebplatform'
+// });
+
+// bigquery.dataset('neatdb').table('auth').insert([{email: "oskr96.oz@gmail.com", password: "1234", type: 1}])
+
 
 const models = require("./models");
 
